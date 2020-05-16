@@ -7,6 +7,7 @@ Envio de Emails para GMAIL|OUTLOOK por um shell script
 ## Como usar
 
 ``` bash
+$ sudo apt install mutt
 $ chmod +x client-email.sh
 $ ./cliente-email.sh
 
