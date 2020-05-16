@@ -79,8 +79,11 @@ form_email(){
             --text="Ainda não temos essa função :c"\
             --width="300"\
             --height="100"\
+            --button=gtk-ok:0\
             --center
+            exit;
         ;;
+       
 
         esac
         send_email;
