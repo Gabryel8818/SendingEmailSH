@@ -22,8 +22,6 @@ var_form=$(
 echo $var_form
 EMAIL=$(echo ${var_form}| cut -d"|" -f3)
 echo "Email: ${EMAIL}"
-PASS=$(echo ${var_form}| cut -d"|" -f4)
-echo "Senha: ${PASS}"
 SUBJECT=$(echo ${var_form}| cut -d"|" -f5)
 echo "Assunto: ${SUBJECT}"
 PROVEDOR=$(echo ${var_form}| cut -d"|" -f2)
