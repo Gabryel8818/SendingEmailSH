@@ -7,7 +7,7 @@ Envio de Emails para GMAIL|OUTLOOK por um shell script
 ## Como usar
 
 ``` bash
-chmod +x client-email.sh
-./cliente-email.sh
+$ chmod +x client-email.sh
+$ ./cliente-email.sh
 
 ```
