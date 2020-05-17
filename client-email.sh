@@ -1,10 +1,42 @@
 #!/bin/bash
 
+validate_fields(){
+    if [ -z $EMAIL ]
+            then
+                EMAIL=$(yad --form\
+                            --title="Email não prenchido"\
+                            --width=300\
+                            --height=100\
+                            --field="Digite o Email:"\
+                            --button=gtk-ok:0\
+                            --center)
+
+            fi
+
+    if [ -z $PASS ]
+        then
+            PASS=$(yad --form\
+                            --title="Senha não preenchida"\
+                            --width=300\
+                            --height=100\
+                            --field="Digite a senha:":H\
+                            --button=gtk-ok:0\
+                            --center)
+                            send_email;
+
+        else
+            send_email;
+        fi
+
+}
+
 
 send_email(){
     if [ -z $ANEX ]
     then
         echo "${CONTEUDO}" | mutt -s "$SUBJECT" "$DEST"
+
+        
     else
         echo "${CONTEUDO}" | mutt -s "$SUBJECT" -a "$ANEX" -- $DEST
     fi
@@ -86,7 +118,7 @@ form_email(){
        
 
         esac
-        send_email;
+        validate_fields;
     fi
    
 }
